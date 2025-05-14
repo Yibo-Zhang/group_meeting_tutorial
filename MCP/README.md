@@ -32,21 +32,7 @@ MCP servers can provide three main types of capabilities:
 1. **Resources**: File-like data that can be read by clients (like API responses or file contents)
 2. **Tools**: Functions that can be called by the LLM (with user approval)
 3. **Prompts**: Pre-written templates that help users accomplish specific tasks
-```mermaid
-graph TD
-    subgraph "After: LLM -> MCP -> Tools"
-        LLM2[LLM] -->|MCP Request| MCP_Layer[MCP Layer]
-        MCP_Layer -->|Delegates to| ToolA_API_MCP[Tool A API]
-        MCP_Layer -->|Delegates to| ToolB_API_MCP[Tool B API]
-        MCP_Layer -->|...| ToolN_API_MCP[Tool N API]
-    end
-
-    subgraph "Before: LLM -> Tools"
-        LLM1[LLM] -->|Direct API Call| ToolA_API[Tool A API]
-        LLM1 -->|Direct API Call| ToolB_API[Tool B API]
-        LLM1 -->|...| ToolN_API[Tool N API]
-    end
-```
+![MCP with Tool](images/mcp_with_tool.svg)
 
 ---
 
