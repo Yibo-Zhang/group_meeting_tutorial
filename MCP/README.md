@@ -25,6 +25,53 @@
 
 ---
 
+## Before MCP
+
+
+**System:**
+You are a helpful AI assistant.
+When you need to perform an addition, you can use the "calculate_sum" tool.
+If you decide to use this tool, you MUST output ONLY the following JSON format, with no additional explanation or text:
+```json
+{
+  "tool_name": "calculate_sum",
+  "arguments": {
+    "number1": "<first_number>",
+    "number2": "<second_number>"
+  }
+}
+```
+If the user's question does not require the tool, please answer directly.
+
+**User:**
+Can you tell me what 11 plus 22 is?
+
+**Assistant:**
+```json
+{
+  "tool_name": "calculate_sum",
+  "arguments": {
+    "number1": 11,
+    "number2": 22
+  }
+}
+```
+
+**Tool result:**
+```json
+{
+  "tool_name": "calculate_sum",
+  "tool_result": 33
+}
+```
+
+**Assistant:**
+11 + 22 = 33.
+
+
+
+---
+
 ## Core MCP Concepts
 
 MCP servers can provide three main types of capabilities:
